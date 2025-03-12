@@ -5,7 +5,7 @@ import User from "../models/User.js";
 export const clerkWebhooks = async (req, res) => {
   try {
     //Create a Svix instance wth clerk webhook secret.
-    const whook = new Webhook(process.env.CLERK_WEBHOOK_sECRET);
+    const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET);
 
     //Verifying Headers
     await whook.verify(JSON.stringify(req.body), {
