@@ -8,7 +8,8 @@ Sentry.init({
     nodeProfilingIntegration(),
     Sentry.mongooseIntegration()
   ],
-  //Tracing
+  
+//Tracing
 //   tracesSampleRate: 1.0, //Capture 100% of transactions
 });
 //Manually call startProfiler and stopProfiler to profile the code in between

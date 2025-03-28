@@ -33,6 +33,7 @@ import samsung_logo from './samsung_logo.png'
 import adobe_logo from './adobe_logo.png'
 import amazon_logo from './amazon_logo.png'
 import x_icon from './x_icon.svg'
+import logo_updated from './logo_updated.svg'
 
 export const assets = {
     logo,
@@ -69,7 +70,8 @@ export const assets = {
     samsung_logo,
     adobe_logo,
     amazon_logo,
-    x_icon
+    x_icon,
+    logo_updated
 }
 
 export const JobCategories = [
