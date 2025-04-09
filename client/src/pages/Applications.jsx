@@ -15,8 +15,13 @@ const Applications = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [resume, setResume] = useState(null);
 
-  const { backendUrl, userData, userApplications, fetchUserData, fetchUserApplications } =
-    useContext(AppContext);
+  const {
+    backendUrl,
+    userData,
+    userApplications,
+    fetchUserData,
+    fetchUserApplications,
+  } = useContext(AppContext);
 
   const updateResume = async () => {
     try {
@@ -46,17 +51,17 @@ const Applications = () => {
   };
 
   useEffect(() => {
-    if (userData && userData.resume && typeof userData.resume !== "string") {
+    if (userData?.resume && typeof userData.resume !== "string") {
       setResume(userData.resume);
     }
   }, [userData]);
+  
 
   useEffect(() => {
     if (user) {
-      fetchUserApplications()
+      fetchUserApplications();
     }
-  }, [user])
-  
+  }, [user]);
 
   return (
     <>
@@ -98,8 +103,10 @@ const Applications = () => {
             </>
           ) : (
             <div className="flex gap-2">
-              <a target='_blank'
-                href={userData.resume}
+              <a
+                target="_blank"
+                href={userData?.resume || '#'}
+
                 className="font-semibold bg-gradient-to-r from-blue-100 to-indigo-200 text-blue-800 px-6 py-2 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 hover:from-indigo-200 hover:to-purple-300 hover:text-blue-900 border border-gray-300"
               >
                 📄 Resume
@@ -136,12 +143,18 @@ const Applications = () => {
             </tr>
           </thead>
           <tbody>
-            {userApplications.map((job, index) =>
-              true ? (
+            {userApplications.map((job, index) => {
+              if (!job.jobId || !job.companyId) return null; // <- guard clause
+
+              return (
                 <tr key={index}>
                   <td className="py-2 px-4 border-b border-gray-300">
                     <div className="flex items-center gap-2">
-                      <img className="w-8 h-8" src={job.companyId.image} alt="" />
+                      <img
+                        className="w-8 h-8"
+                        src={job.companyId.image}
+                        alt=""
+                      />
                       {job.companyId.name}
                     </div>
                   </td>
@@ -157,20 +170,20 @@ const Applications = () => {
                   <td className="py-2 px-4 border-b border-gray-300">
                     <span
                       className={`w-24 px-4 py-1 rounded-full text-center font-semibold inline-block 
-                      ${
-                        job.status === "Accepted"
-                          ? "bg-green-100  text-green-700"
-                          : job.status === "Rejected"
-                          ? "bg-red-100 text-red-800"
-                          : "bg-blue-100 text-blue-800"
-                      }`}
+            ${
+              job.status === "Accepted"
+                ? "bg-green-100 text-green-700"
+                : job.status === "Rejected"
+                ? "bg-red-100 text-red-800"
+                : "bg-blue-100 text-blue-800"
+            }`}
                     >
                       {job.status}
                     </span>
                   </td>
                 </tr>
-              ) : null
-            )}
+              );
+            })}
           </tbody>
         </table>
       </div>
