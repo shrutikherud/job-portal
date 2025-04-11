@@ -1,25 +1,48 @@
-import React from 'react'
-import { assets } from '../assets/assets'
+import React from "react";
+import { assets } from "../assets/assets";
 
 const AppDownload = () => {
   return (
-    <div className='container px-4 2xl:px-20 mx-auto my-20'>
-        <div className='relative bg-gradient-to-r from-purple-200 to-indigo-300 p-12 sm:p-24 lg:p-32 rounded-lg'>
-            <div>
-                <h1 className='text-2xl sm:text-4xl font-bold mb-8 '>Download Mobile App For Better Experience</h1>
-                <div className='flex gap-4'>
-                    <a href="https://play.google.com/store/games?hl=en" className='inline-block'>
-                        <img className='h-12' src={assets.play_store} alt="" />
-                    </a>
-                    <a href="https://www.apple.com/in/app-store/" className='inline-block'>
-                        <img className='h-12' src={assets.app_store} alt="" />
-                    </a>
-                </div>
-            </div>
-            <img className='absolute w-80 right-6 bottom-0 mr-32 max-lg:hidden' src={assets.app_main_img} alt="" />
-        </div>
-    </div>
-  )
-}
+    <div className="max-w-6xl mx-auto my-12 px-4">
+      <div className="bg-gradient-to-r from-indigo-300 to-purple-200 py-8 px-6 rounded-xl shadow-md">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
+          
+          {/* Text Section */}
+          <div className="flex-1">
+            <h1 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-gray-900 mb-4">
+              ✨ Find Your Dream Job with InsiderJobs
+            </h1>
+            <p className="text-base sm:text-lg text-gray-800 mb-3 leading-relaxed">
+              Discover thousands of job opportunities across various industries.
+              Whether you're a fresher or an experienced professional, InsiderJobs
+              connects you with top companies looking for talent like you.
+            </p>
+            <ul className="list-inside text-gray-800 text-base sm:text-lg mb-3 space-y-1">
+              <li>📌 Easy to search</li>
+              <li>📌 Quick application tracking</li>
+              <li>📌 Profile and resume management</li>
+            </ul>
+            <p className="text-base sm:text-lg font-semibold text-gray-800">
+              Start your career journey today—where the right job finds you!
+            </p>
+          </div>
 
-export default AppDownload
+          {/* Image Section */}
+          {/* Image Section */}
+{/* Image */}
+<div className="flex items-end h-full mt-6 lg:mt-0">
+  <img
+    src={assets.app_main_img}
+    alt="Lady pointing"
+    className="w-52 sm:w-60 lg:w-64 object-contain -mb-8"
+  />
+</div>
+
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AppDownload;
