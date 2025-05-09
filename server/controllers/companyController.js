@@ -4,6 +4,14 @@ import { v2 as cloudinary } from "cloudinary";
 import generateToken from "../utils/generateToken.js";
 import Job from "../models/Job.js";
 import JobApplication from "../models/JobApplication.js";
+import { createClerkClient } from '@clerk/backend';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const clerkClient = createClerkClient({
+  secretKey: process.env.CLERK_SECRET_KEY,
+});
+import sendEmail from '../utils/sendEmail.js';
 
 // Register a new Company
 export const registerCompany = async (req, res) => {
@@ -155,17 +163,38 @@ export const getCompanyPostedJobs = async (req, res) => {
 
 // Change job application status
 export const changeJobApplicationStatus = async (req, res) => {
-
   try {
     const { id, status } = req.body;
 
     // Find job application data and update status
-    await JobApplication.findOneAndUpdate({ _id: id }, { status });
+    const application = await JobApplication.findOneAndUpdate(
+      { _id: id },
+      { status },
+      { new: true }
+    );
 
-    res.json({ success: true, message: "Status Changed" });
+    if (!application) {
+      return res.json({ success: false, message: "Application not found" });
+    }
+
+    // Fetch user email via Clerk
+    const clerkUser = await clerkClient.users.getUser(application.userId);
+    const email = clerkUser.emailAddresses[0]?.emailAddress;
+    const name = clerkUser.firstName || 'Job Seeker';
+
+    // Send status update email
+    await sendEmail(
+      email,
+      'Application Status Updated',
+      `<p>Hello ${name},</p>
+       <p>Your job application status has been updated to <strong>${status}</strong>.</p>
+       <p>Regards,<br/>Job Portal Team</p>`
+    );
+
+    res.json({ success: true, message: "Status Changed and Email Sent" });
 
   } catch (error) {
-    res.json({success: false, message: error.message})
+    res.json({ success: false, message: error.message });
   }
 };
 
