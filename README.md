@@ -1,3 +1,18 @@
+[![React](https://img.shields.io/badge/react-20232A.svg?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/node.js-339933.svg?style=flat&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/mongodb-47A248.svg?style=flat&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Express.js](https://img.shields.io/badge/express.js-000000.svg?style=flat&logo=express&logoColor=white)](https://expressjs.com/)
+[![Cloudinary](https://img.shields.io/badge/cloudinary-3448C5.svg?style=flat&logo=cloudinary&logoColor=white)](https://cloudinary.com/)
+[![Multer](https://img.shields.io/badge/multer-333333.svg?style=flat&logo=npm&logoColor=white)](https://www.npmjs.com/package/multer)
+[![Clerk](https://img.shields.io/badge/clerk-F44C57.svg?style=flat&logo=clerk&logoColor=white)](https://clerk.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/tailwindcss-06B6D4.svg?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)<br>
+[![JWT](https://img.shields.io/badge/JWT-000000.svg?style=flat&logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
+[![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=flat&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/)
+[![Vercel](https://img.shields.io/badge/vercel-000000.svg?style=flat&logo=vercel&logoColor=white)](https://vercel.com/)
+
+
+
 # 💼 Job Portal Web Application
 
 A full-stack Job Portal web application built using the **MERN** stack (MongoDB, Express.js, React, Node.js), enabling job seekers to apply for jobs and companies (recruiters) to post and manage job listings. It also integrates **Firebase**, **Cloudinary**, **Multer**, and **JWT authentication**.
