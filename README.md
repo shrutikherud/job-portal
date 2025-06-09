@@ -30,7 +30,6 @@ A full-stack Job Portal web application built using the **MERN** stack (MongoDB,
 | Express.js       | Backend framework                   |
 | MongoDB          | NoSQL Database                      |
 | Mongoose         | MongoDB ORM                         |
-| Firebase         | File storage (resumes/images)       |
 | Multer           | File upload middleware              |
 | Cloudinary       | Cloud image management              |
 | Clerk            | User Authentication (for job seekers) |
