@@ -41,9 +41,6 @@ A full-stack Job Portal web application built using the **MERN** stack (MongoDB,
 
 ---
 
-
----
-
 ## 🧠 How It Works
 
 ### 🔐 Authentication
