@@ -35,26 +35,38 @@ A full-stack Job Portal web application built using the **MERN** stack (MongoDB,
   - View applicants and their resumes
 
 ---
+## 🛠️ Setup Instructions
+### ✅ Prerequisites:
+- Node.js & npm
+- MongoDB Atlas account
+- Clerk project (for user auth)
+- Cloudinary account
 
-## 🛠️ Tech Stack
+### 🔐 Environment Variables Setup
+You’ll need to create **two `.env` files** — one for the frontend (`client/`) and one for the backend (`server/`).
 
-| Technology       | Purpose                            |
-|------------------|-------------------------------------|
-| React.js         | Frontend UI                         |
-| Node.js          | Backend runtime                     |
-| Express.js       | Backend framework                   |
-| MongoDB          | NoSQL Database                      |
-| Mongoose         | MongoDB ORM                         |
-| Multer           | File upload middleware              |
-| Cloudinary       | Cloud image management              |
-| Clerk            | User Authentication (for job seekers) |
-| JWT              | Authentication (for recruiters)     |
-| Tailwind CSS     | Styling                             |
-| React Router     | Navigation                          |
-| Axios            | API Communication                   |
+#### 📁 `client/.env`
+```env
+REACT_APP_API_URL=your_url
+CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+```
+#### 📁 `server/.env`
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
 
+CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+CLERK_WEBHOOK_SECRET=your_clerk_webhook_secret
+CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+
+EMAIL_USER=your_email@example.com
+EMAIL_PASS=your_email_password_or_app_password
+```
 ---
-
 ## 🧠 How It Works
 
 ### 🔐 Authentication
@@ -80,14 +92,28 @@ A full-stack Job Portal web application built using the **MERN** stack (MongoDB,
 
 ---
 
-### 🛠️ Setup Instructions
-✅ Prerequisites:
-- Node.js & npm
-- MongoDB Atlas account
-- Clerk project (for user auth)
-- Cloudinary account
+## 🛠️ Tech Stack
+
+| Technology       | Purpose                            |
+|------------------|-------------------------------------|
+| React.js         | Frontend UI                         |
+| Node.js          | Backend runtime                     |
+| Express.js       | Backend framework                   |
+| MongoDB          | NoSQL Database                      |
+| Mongoose         | MongoDB ORM                         |
+| Multer           | File upload middleware              |
+| Cloudinary       | Cloud image management              |
+| Clerk            | User Authentication (for job seekers) |
+| JWT              | Authentication (for recruiters)     |
+| Tailwind CSS     | Styling                             |
+| React Router     | Navigation                          |
+| Axios            | API Communication                   |
 
 ---
+
+
+
+
 
 ## 🔮 Future Enhancements
 
